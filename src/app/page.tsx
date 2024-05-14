@@ -17,8 +17,12 @@ export default function Home() {
       <div className="flex gap-4 flex-wrap w-full">
         {isLoading ? (
           <Skeleton className="w-60 h-32 rounded-lg" />
+        ) : notes?.length ? (
+          notes.map((note) => <NoteCard key={note.id} {...note} />)
         ) : (
-          notes?.map((note) => <NoteCard key={note.id} {...note} />)
+          <p className="w-full font-bold opacity-60 text-center">
+            No notes found.
+          </p>
         )}
       </div>
     </main>

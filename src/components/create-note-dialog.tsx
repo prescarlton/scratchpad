@@ -12,7 +12,7 @@ import { Input } from "./ui/input"
 import { Textarea } from "./ui/textarea"
 import { useState } from "react"
 import createNote from "@/actions/createNote"
-import { toast } from "./ui/use-toast"
+import { toast } from "sonner"
 import { mutate } from "swr"
 
 const CreateNoteDialog = () => {
@@ -23,7 +23,7 @@ const CreateNoteDialog = () => {
   const handleSubmit = async () => {
     setLoading(true)
     await createNote({ title, content }).then((_res) => {
-      toast({ title: "Note created", description: "Your note was created." })
+      toast.success("note created")
       mutate("list-notes")
     })
     setLoading(false)

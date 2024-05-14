@@ -1,3 +1,4 @@
+"use server"
 import { prisma } from "@/prismaClient"
 import { Note } from "@prisma/client"
 
