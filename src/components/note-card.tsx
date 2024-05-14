@@ -7,7 +7,7 @@ interface NoteCardProps {
 
 const NoteCard = ({ title, content }: NoteCardProps) => {
   return (
-    <Card className="w-60">
+    <Card className="w-60 min-h-32">
       {title && (
         <CardHeader>
           <CardTitle>{title}</CardTitle>

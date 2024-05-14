@@ -1,3 +1,4 @@
+"use server"
 import { prisma } from "@/prismaClient"
 
 export default async function listNotes() {
