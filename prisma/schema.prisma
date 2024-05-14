@@ -9,6 +9,16 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
+  provider = "sqlite"
+  url      = "file:notes.db"
+}
+
+model Note {
+  id      String   @id @default(cuid())
+  title   String?
+  content String
+  created DateTime @default(now())
+  updated DateTime @default(now()) @updatedAt
+
+  @@map("notes")
 }
